@@ -1,105 +1,171 @@
-# Botium Toys Cybersecurity Risk Assessment
+<!--
+  Botium Toys Cybersecurity Risk Assessment
+  Portfolio case study — document-based review, not a formal audit.
+-->
 
-A cybersecurity portfolio case study focused on reviewing security controls, documenting potential risks, identifying compliance-related gaps, and proposing prioritized remediation actions.
+<div align="center">
 
-> **Project type:** Educational case study  
-> **Focus:** Risk assessment, security controls, compliance gap review, remediation planning  
-> **Case-study organization:** Botium Toys  
-> **Assessment basis:** Provided scope, goals and risk assessment report; control categories reference; controls and compliance checklist
+# 🛡️ Botium Toys Security Assessment
 
-## Overview
+### Cybersecurity Risk Assessment · Controls Review · Remediation Planning
 
-This project reviews the security posture described in the Botium Toys case-study materials. It summarizes the documented control environment, identifies areas that may expose the organization to risk, and proposes actions to improve security and operational resilience.
+*A practical, documentation-based security case study*
 
-The source report assigns an overall risk score of **8/10** and describes the risk level as fairly high. This score is reproduced from the case-study material; it is not an independently calculated score.
+<br>
 
-## Objectives
+![Project Type](https://img.shields.io/badge/Project-Educational%20Case%20Study-2457C5?style=for-the-badge)
+![Focus](https://img.shields.io/badge/Focus-Cybersecurity-167D6D?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Portfolio%20Project-6D5BD0?style=for-the-badge)
 
-- Review the security controls described in the case-study documents.
+<br>
+
+**[Explore the Findings](findings/identified-risks.md) · [Review the Controls](findings/security-controls-review.md) · [View the Remediation Plan](recommendations/remediation-plan.md)**
+
+</div>
+
+---
+
+## 📌 Project Overview
+
+This project analyzes the security posture described in the **Botium Toys case study**. It organizes reported security weaknesses, reviews existing controls, highlights compliance-related questions, and recommends practical actions to reduce risk.
+
+The goal is to demonstrate how a cybersecurity analyst can turn assessment materials into clear findings and an actionable remediation plan.
+
+> [!IMPORTANT]
+> The source report gives an overall risk score of **8/10** and describes the risk level as fairly high. This score is quoted from the case-study material; it was not independently calculated or validated by this project.
+
+## 🧭 At a Glance
+
+| | |
+|---|---|
+| **Project type** | Educational cybersecurity case study |
+| **Organization** | Botium Toys (case-study organization) |
+| **Primary focus** | Risk identification and security controls review |
+| **Related frameworks** | PCI DSS, GDPR, and SOC-related criteria |
+| **Deliverables** | Risk register, controls review, compliance gap review, remediation plan |
+| **Assessment method** | Review of supplied documents and checklist |
+
+## 🎯 Objectives
+
+- Review the security controls described in the case-study materials.
 - Identify missing, weak, or inconsistently maintained controls.
-- Consider risks involving access management, sensitive data, recovery, network monitoring, and asset visibility.
-- Summarize compliance-related questions involving PCI DSS, GDPR, and SOC criteria.
-- Propose prioritized remediation actions and evidence that could be used to validate improvements.
+- Assess potential risks involving access, sensitive data, recovery, monitoring, and asset visibility.
+- Organize compliance-related questions involving PCI DSS, GDPR, and SOC criteria.
+- Recommend prioritized remediation actions and evidence that could validate improvements.
 
-## Assessment Scope
+## 🔍 Assessment Scope
 
-The source materials describe a review covering:
+The source materials describe a review of the following areas:
 
-- Asset inventory and management
-- Employee devices and internal systems
-- Network security and firewall controls
-- User access and separation of duties
-- Password policy and password management
-- Sensitive data protection and encryption
-- Antivirus and intrusion detection
-- Backups and disaster recovery
-- Legacy-system monitoring and maintenance
-- Physical security, including locks, CCTV, and fire systems
-- Compliance-related practices and documentation
+| Domain | Areas considered |
+|---|---|
+| **Asset management** | Asset inventory, employee devices, internal systems, and data storage |
+| **Access management** | Least privilege, account access, and separation of duties |
+| **Data protection** | Sensitive data handling and encryption |
+| **Network & endpoint security** | Firewall, antivirus, and intrusion detection |
+| **Recovery & resilience** | Backups and disaster recovery planning |
+| **Identity security** | Password policy and centralized password management |
+| **Legacy systems** | Monitoring, maintenance, and intervention procedures |
+| **Physical security** | Locks, CCTV, and fire detection/prevention systems |
+| **Compliance** | Practices and documentation related to the frameworks referenced in the case study |
 
-## Key Findings
+## 🚩 Key Findings
 
-Based on the supplied case-study report:
+The following findings are based on the supplied report and checklist. They are **reported conditions**, not independently verified technical results.
 
-- **Access management:** Least privilege and separation of duties were not implemented, and the report states that all employees could access internally stored data.
-- **Payment-data protection:** Locally stored credit card information was not encrypted.
-- **Recovery readiness:** Disaster recovery plans and backups of critical data were not in place.
-- **Threat detection:** An intrusion detection system was not in place.
-- **Password security:** A password policy existed, but its requirements were described as weak or outdated. A centralized password management system was also absent.
-- **Asset visibility:** The report describes inadequate asset management and uncertainty about which assets were at risk.
-- **Legacy systems:** Monitoring and maintenance were reported, but there was no regular schedule and intervention methods were unclear.
-- **Existing controls:** The report describes firewall rules, monitored antivirus, physical locks, CCTV, and functioning fire systems.
+| Finding | What the source materials report | Proposed priority |
+|---|---|:---:|
+| **Access control** | Least privilege was not implemented; the report says all employees could access internally stored data. | 🔴 Critical |
+| **Payment-data protection** | Locally stored credit card information was not encrypted. | 🔴 Critical |
+| **Data recovery** | Backups of critical data and a disaster recovery plan were absent. | 🔴 Critical |
+| **Threat detection** | An intrusion detection system was not in place. | 🟠 High |
+| **Password security** | A password policy existed but was described as weak or outdated; centralized password management was absent. | 🟠 High |
+| **Separation of duties** | Separation of duties was not implemented. | 🟠 High |
+| **Asset visibility** | Asset management was inadequate, leaving uncertainty about which assets were at risk. | 🟠 High |
+| **Legacy-system maintenance** | Monitoring and maintenance existed, but a regular schedule and clear intervention methods were lacking. | 🟡 Medium |
 
-These findings reflect what the source documents report; they have not been independently validated through technical testing.
+**Priority labels above are proposed for this portfolio analysis.** They are not original scores for every finding and should be refined using a documented likelihood-and-impact method.
 
-## Recommended Priorities
+## 🧰 Recommended Remediation Roadmap
 
-| Priority | Proposed action | Intended outcome |
-|---|---|---|
-| Critical | Review access permissions and implement least privilege | Limit access to approved business needs |
-| Critical | Identify payment-data storage locations and apply appropriate protection, including encryption where required | Reduce the risk of sensitive payment data exposure |
-| Critical | Establish and test backups for critical data | Improve recovery from data loss |
-| Critical | Create and test a disaster recovery plan | Improve resilience during major incidents |
-| High | Strengthen and review password requirements | Improve account security |
-| High | Evaluate centralized password management | Improve consistency of password administration |
-| High | Evaluate intrusion detection and monitoring capabilities | Improve visibility into suspicious activity |
-| High | Implement separation of duties | Reduce excessive privileges and conflicting responsibilities |
-| High | Create an asset inventory and data-classification process | Improve visibility into assets and sensitive data |
-| Medium | Schedule and document legacy-system maintenance | Make maintenance more consistent and auditable |
+### 🔴 Critical — Address first
 
-Priorities above are proposed for this portfolio analysis. They are not all assigned by the original report, and they should be refined using an explicit likelihood-and-impact method.
+- Review user permissions and implement **least privilege**.
+- Identify payment-data locations and apply appropriate safeguards, including encryption where required.
+- Establish and test backups for critical data.
+- Create and test a disaster recovery plan.
 
-## Repository Guide
+### 🟠 High — Strengthen security controls
 
-- [Identified Risks](findings/identified-risks.md) — risk register with impacts and proposed priorities.
-- [Security Controls Review](findings/security-controls-review.md) — summary of reported control status.
-- [Compliance Gap Review](findings/compliance-gaps.md) — questions and gaps to validate against applicable requirements.
-- [Remediation Plan](recommendations/remediation-plan.md) — suggested actions, owners, and validation evidence.
-- [Source Documents](docs/README.md) — guidance for handling the supporting case-study materials.
+- Review and strengthen password requirements.
+- Evaluate centralized password management.
+- Evaluate intrusion detection and security-monitoring capabilities.
+- Implement separation of duties.
+- Build an asset inventory and classify sensitive data.
 
-## Methodology
+### 🟡 Medium — Improve consistency and evidence
 
-1. Review the scope and risk assessment report.
-2. Compare reported controls with the control categories reference and checklist.
-3. Record the documented state of each control.
-4. Describe potential impacts without assuming an incident has occurred.
-5. Propose remediation actions and evidence that could validate completion.
+- Schedule and document legacy-system maintenance.
+- Validate existing firewall, antivirus, physical-security, and fire-system controls.
+- Retain evidence showing that controls operate as intended.
 
-## Limitations
+See the [full remediation plan](recommendations/remediation-plan.md) for suggested owners and examples of validation evidence.
 
-This is a document-based educational assessment, not a live technical audit, penetration test, legal opinion, or formal compliance certification. The findings depend on the completeness and accuracy of the supplied case-study documents. Compliance-related observations should be validated against applicable requirements and supporting evidence before being treated as definitive conclusions.
+## 🗂️ Repository Guide
 
-## Disclaimer
+Use these documents to explore the assessment in more detail:
 
-This project is intended to demonstrate cybersecurity analysis and documentation skills. Botium Toys is used as a case-study organization. Third-party course materials should only be redistributed when their licensing and sharing permissions allow it; see [Source Documents](docs/README.md).
+| Document | Description |
+|---|---|
+| 📋 [**Identified Risks**](findings/identified-risks.md) | Risk register with documented findings, potential impacts, and proposed priorities |
+| 🔐 [**Security Controls Review**](findings/security-controls-review.md) | Summary of the controls reported as present, missing, or needing improvement |
+| 📑 [**Compliance Gap Review**](findings/compliance-gaps.md) | Preliminary PCI DSS, GDPR, and SOC-related observations and follow-up questions |
+| 🛠️ [**Remediation Plan**](recommendations/remediation-plan.md) | Suggested actions, priorities, owners, and evidence of completion |
+| 📚 [**Source Document Notes**](docs/README.md) | Guidance on source materials, redistribution, and assessment limitations |
+| 🖼️ [**Project Visuals**](images/README.md) | Ideas for diagrams and visual summaries |
 
-## Skills Demonstrated
+## ⚙️ Methodology
 
-- Cybersecurity risk identification
+1. **Review** — examine the supplied scope, risk assessment, control reference, and checklist.
+2. **Identify** — record the controls and weaknesses described in those materials.
+3. **Analyze** — describe plausible impacts without claiming an incident occurred.
+4. **Prioritize** — propose an order for remediation based on the potential severity of each issue.
+5. **Recommend** — define actions and examples of evidence that could demonstrate progress.
+6. **Validate** — identify the additional testing and evidence needed before treating a control as effective.
+
+## 🧠 Skills Demonstrated
+
+- Cybersecurity risk identification and documentation
 - Security controls review
-- Access management analysis
-- Data protection review
+- Access management and least-privilege analysis
+- Sensitive-data protection review
 - Compliance gap analysis
 - Risk prioritization
 - Remediation planning
-- Security documentation
+- Evidence-based security reporting
+
+## ⚠️ Scope & Limitations
+
+This is a **document-based educational assessment**. It is not a live technical audit, penetration test, legal opinion, or formal compliance certification.
+
+The findings depend on the completeness and accuracy of the supplied case-study materials. A control described as present has not necessarily been tested for effectiveness. Compliance-related observations are preliminary questions for further validation—not definitive conclusions that an organization complies or fails to comply with a law or standard.
+
+## 📚 Source Materials & Responsible Sharing
+
+The analysis is based on the Botium Toys case-study materials covering:
+
+- Scope, goals, and risk assessment
+- Security control categories
+- Controls and compliance checklist
+
+Before uploading original course PDFs, confirm that their licensing or course terms permit redistribution. If permission is unclear, keep your own analysis in the repository and link to an authorized source where possible. See [source document guidance](docs/README.md).
+
+---
+
+<div align="center">
+
+**Built as a cybersecurity learning and portfolio project.**
+
+*Identify the risk. Understand the control. Recommend the improvement.*
+
+</div>
